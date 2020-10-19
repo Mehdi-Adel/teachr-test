@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+
+.menu-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    border: solid 1px #c8c8c8;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    margin: 10px 120px;
+}
+
+.menu-list-item {
+    list-style-type: none;
+    padding: 20px;
+    font-size: 1.4em;
+}
+
+.title {
+    color: #808080;
+    font-weight: bold;
+}
+
+.current {
+    background-color: #e0e0e0;
+}
+
+.menu-list-item-link {
+    display: block;
+    text-decoration: none;
+}
+
+.menu-list-item-link:visited {
+    color: inherit;
+}
+
+/* Courses */
+
+.next-course {
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.courses {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: auto;
+}
+
+.course {
+    border: 1px solid #e9edf0;
+    box-shadow: 8px 30px 40px 20px #ddd;
+    border-radius: 10px;
+    padding: 30px 20px;
+    width: 33%;
+    margin: 35px 0;
+}
+
+.course-title {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.next-course-date {
+    color: #898989;
+}
+
+.course-teacher,
+.course-schedule,
+.course-duration,
+.course-whatever {
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.course-teacher-name,
+.course-schedule-days,
+.course-duration-content,
+.course-whatever-name {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.course-start-date,
+.course-start-hour {
+    color: #a5a5a5;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 1em;
+}
+
+.details-button {
+    padding: 3% 35%;
+    background-color: #d9eeff;
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.details-button-link {
+    display: block;
+    text-decoration: none;
+    color: #39a0f2;
+}
+
+.details-button-link:visited {
+    color: inherit;
+}
