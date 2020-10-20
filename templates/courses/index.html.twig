@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CoursesController!{% endblock %}
+{% block title %}Mes cours{% endblock %}
 
 {% block body %}
         <header class="header">
@@ -23,13 +23,15 @@
         <div class="courses-program">
             <p class="next-course">Prochain cours : le lundi 23 décembre</p>
             <div class="courses">
-                <div class="course">
+
+            {% for course in courses %}
+            <div class="course">
                     <div class="course-title">
                         <h3 class="course-title-content">
-                            Cours régulier de maths
+                            Cours régulier de {{ course.lesson}}
                         </h3>
                         <h4 class="next-course-date">
-                            Prochain cours : aujourd'hui
+                            Prochain cours : {{ course.next_course }}
                         </h4>
                     </div>
                     <div class="course-teacher">
@@ -38,7 +40,7 @@
                             alt=""
                             class="icon"
                         />
-                        <p class="course-teacher-name">Mehdi</p>
+                        <p class="course-teacher-name">{{ course.teacher_name }}</p>
                     </div>
                     <div class="course-schedule">
                         <img
@@ -48,18 +50,18 @@
                         />
                         <div class="course-schedule-container">
                             <p class="course-schedule-days">
-                                Lundi, Mardi, Jeudi, Samedi
+                                {{ course.schedule }}
                             </p>
                             <p class="course-start-date">
-                                A partir du samedi 3 octobre
+                                A partir du {{ course.starting_day }}
                             </p>
                         </div>
                     </div>
                     <div class="course-duration"> <img class="icon"
                         src="{{ asset('img/clock.png') }}"/>
                         <div class="course-duration-container">
-                            <p class="course-duration-content">1h30/jour</p>
-                            <p class="course-start-hour">A partir de 14h30</p>
+                            <p class="course-duration-content">{{ course.duration }}</p>
+                            <p class="course-start-hour">A partir de {{ course.starting_hour }}</p>
                         </div>
                     </div>
                     <div class="course-whatever">
@@ -68,189 +70,15 @@
                             alt=""
                             class="icon"
                         />
-                        <p class="course-whatever-name">Shepard</p>
+                        <p class="course-whatever-name">{{ course.whatever }}</p>
                     </div>
                     <div class="details">
                         <button class="details-button">
-                            <a href="http://" class="details-button-link">
-                                Détails</a
-                            >
+                            <a href="http://" class="details-button-link">Détails</a>
                         </button>
                     </div>
                 </div>
-
-                                <div class="course">
-                    <div class="course-title">
-                        <h3 class="course-title-content">
-                            Cours régulier de maths
-                        </h3>
-                        <h4 class="next-course-date">
-                            Prochain cours : aujourd'hui
-                        </h4>
-                    </div>
-                    <div class="course-teacher">
-                        <img
-                            src="{{ asset('img/backpack.png') }}"
-                            alt=""
-                            class="icon"
-                        />
-                        <p class="course-teacher-name">Mehdi</p>
-                    </div>
-                    <div class="course-schedule">
-                        <img
-                            src="{{ asset('img/calendar.png') }}"
-                            alt=""
-                            class="icon"
-                        />
-                        <div class="course-schedule-container">
-                            <p class="course-schedule-days">
-                                Lundi, Mardi, Jeudi, Samedi
-                            </p>
-                            <p class="course-start-date">
-                                A partir du samedi 3 octobre
-                            </p>
-                        </div>
-                    </div>
-                    <div class="course-duration">
-                        <img class="icon"
-                        src="{{ asset('img/clock.png') }}"/>
-                        <div class="course-duration-container">
-                            <p class="course-duration-content">1h30/jour</p>
-                            <p class="course-start-hour">A partir de 14h30</p>
-                        </div>
-                    </div>
-                    <div class="course-whatever">
-                        <img
-                            src="{{ asset('img/graduate.png') }}"
-                            alt=""
-                            class="icon"
-                        />
-                        <p class="course-whatever-name">Shepard</p>
-                    </div>
-                    <div class="details">
-                        <button class="details-button">
-                            <a href="http://" class="details-button-link">
-                                Détails</a
-                            >
-                        </button>
-                    </div>
-                </div>
-
-                                <div class="course">
-                    <div class="course-title">
-                        <h3 class="course-title-content">
-                            Cours régulier de maths
-                        </h3>
-                        <h4 class="next-course-date">
-                            Prochain cours : aujourd'hui
-                        </h4>
-                    </div>
-                    <div class="course-teacher">
-                        <img
-                            src="{{ asset('img/backpack.png') }}"
-                            alt=""
-                            class="icon"
-                        />
-                        <p class="course-teacher-name">Mehdi</p>
-                    </div>
-                    <div class="course-schedule">
-                        <img
-                            src="{{ asset('img/calendar.png') }}"
-                            alt=""
-                            class="icon"
-                        />
-                        <div class="course-schedule-container">
-                            <p class="course-schedule-days">
-                                Lundi, Mardi, Jeudi, Samedi
-                            </p>
-                            <p class="course-start-date">
-                                A partir du samedi 3 octobre
-                            </p>
-                        </div>
-                    </div>
-                    <div class="course-duration">
-                        <img class="icon"
-                        src="{{ asset('img/clock.png') }}"/>
-                        <div class="course-duration-container">
-                            <p class="course-duration-content">1h30/jour</p>
-                            <p class="course-start-hour">A partir de 14h30</p>
-                        </div>
-                    </div>
-                    <div class="course-whatever">
-                        <img
-                            src="{{ asset('img/graduate.png') }}"
-                            alt=""
-                            class="icon"
-                        />
-                        <p class="course-whatever-name">Shepard</p>
-                    </div>
-                    <div class="details">
-                        <button class="details-button">
-                            <a href="http://" class="details-button-link">
-                                Détails</a
-                            >
-                        </button>
-                    </div>
-                </div>
-
-                                <div class="course">
-                    <div class="course-title">
-                        <h3 class="course-title-content">
-                            Cours régulier de maths
-                        </h3>
-                        <h4 class="next-course-date">
-                            Prochain cours : aujourd'hui
-                        </h4>
-                    </div>
-                    <div class="course-teacher">
-                        <img
-                            src="{{ asset('img/backpack.png') }}"
-                            alt=""
-                            class="icon"
-                        />
-                        <p class="course-teacher-name">Mehdi</p>
-                    </div>
-                    <div class="course-schedule">
-                        <img
-                            src="{{ asset('img/calendar.png') }}"
-                            alt=""
-                            class="icon"
-                        />
-                        <div class="course-schedule-container">
-                            <p class="course-schedule-days">
-                                Lundi, Mardi, Jeudi, Samedi
-                            </p>
-                            <p class="course-start-date">
-                                A partir du samedi 3 octobre
-                            </p>
-                        </div>
-                    </div>
-                    <div class="course-duration">
-                        <img class="icon"
-                        src="{{ asset('img/clock.png') }}"/>
-                        <div class="course-duration-container">
-                            <p class="course-duration-content">1h30/jour</p>
-                            <p class="course-start-hour">A partir de 14h30</p>
-                        </div>
-                    </div>
-                    <div class="course-whatever">
-                        <img
-                            src="{{ asset('img/graduate.png') }}"
-                            alt=""
-                            class="icon"
-                        />
-                        <p class="course-whatever-name">Shepard</p>
-                    </div>
-                    <div class="details">
-                        <button class="details-button">
-                            <a href="http://" class="details-button-link">
-                                Détails</a
-                            >
-                        </button>
-                    </div>
-                </div>
-
-                
+            {% endfor %}                
             </div>
         </div>
 {% endblock %}
